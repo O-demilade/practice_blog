@@ -4,12 +4,17 @@
     --pb_green: green;
     --pb_blue: blue;
 }
-
+body{
+    display: grid;
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-row-gap: 5px;
+    margin: 0;
+}
 .header{
     background-color: var(--pb_red);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100px;
+    grid-template-rows: 15vh;
     position: static;
     left: 0; right: 0; top: 0;
 }
@@ -17,21 +22,35 @@
 .torso{
     display: grid;
     grid-template-columns: 15% auto 15%;
-    grid-template-rows: inherit;
+    grid-template-rows: auto;
     grid-column-gap: 3px;
 }
+.torso>*{
+    padding: 25px;
+}
 
-.chest{background-color: var(--pb_green)}
+.chest{
+    background-color: var(--pb_green);
+    overflow-y: auto;
+    border-radius: 15px;
+}
 
 .l_arm, .r_arm{background-color: transparent;}
+
+.new_post{
+    height: 30px;
+    width: 30px;
+    background-color: burlywood;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 .footer{
     background-color: var(--pb_blue);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 80px;
-    position: fixed;
-    right: 0.5%;
-    left: 0.5%;
-    bottom: 1%;
+    grid-template-rows: 15vh;
 }
