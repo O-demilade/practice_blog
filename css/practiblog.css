@@ -4,53 +4,72 @@
     --pb_green: green;
     --pb_blue: blue;
 }
-body{
-    display: grid;
-    grid-template-rows: 15vh 70vh 15vh;
-    grid-row-gap: 5px;
+* {
     margin: 0;
 }
-.header{
+html, body{
+    height: 100%;
+}
+body{
+    display: grid;
+    grid-template-rows: 10vh 78vh 10vh;
+    grid-row-gap: 1vh;
+    margin: 0;
+}
+header{
     background-color: var(--pb_red);
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 15vh;
-    position: static;
-    left: 0; right: 0; top: 0;
+    grid-template-columns: repeat(12, auto);
+    color: blue;
 }
-
-.torso{
+header button{
+    grid-column: 12/13;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 0;
+    color: blue;
+    border: none;
+}
+main{
     display: grid;
-    grid-template-columns: 15% auto 15%;
-    grid-template-rows: auto;
-    grid-column-gap: 3px;
+    grid-template-columns: 25% 63% 10%;
+    column-gap: 1%;
 }
-.torso>*{
-    padding: 25px;
-}
-
-.chest{
-    background-color: var(--pb_green);
-    overflow-y: auto;
-    border-radius: 15px;
-}
-
-.l_arm, .r_arm{background-color: transparent;}
-
-.new_post{
-    height: 30px;
-    width: 30px;
+article{
     background-color: burlywood;
-    border-radius: 10px;
-    padding: 5px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    border-radius: 5px;
+    overflow: auto;
 }
-
-.footer{
-    background-color: var(--pb_blue);
+.output {
+    background-color: cornsilk;
+    margin: 15px 15px 0 15px;
+    padding: 15px 15px 25px 15px;
+}
+.writeup{
+    padding: 15px;
+}
+.author{
+    color: chartreuse;
+    float: right;
+}
+footer{
+    background-color: var(--pb_red);
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 15vh;
+}
+.input {
+    position: fixed;
+    background-color: brown;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    top: 15%;
+    left: 10%;
+    display: none;
+}
+#cls_add {
+    float: right;
+    cursor: pointer;
 }
