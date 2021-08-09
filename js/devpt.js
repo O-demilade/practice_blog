@@ -16,10 +16,6 @@ const storage = {
   titles: window.localStorage.getItem("practiBlogTitles")
 };
 
-let out1 = window.localStorage.getItem("My store");
-
-let out = (out1 === null);
-
 // devptDisplay(storage.titles);
 // devptDisplay(global.postLinks);
 

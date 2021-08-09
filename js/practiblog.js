@@ -46,61 +46,61 @@ window.addEventListener("DOMContentLoaded", function(d){
   
   populatePostTitles();
   // // select the last post and display it 
-  // if (global.postTitles.length !== 0){
-  //   global.display = global.postTitles[(global.postTitles["length"]-1)];
-  //    addDisplay(global.display);
-  // };
-
-  // const outPost = localStorage.getItem(global.display);
-
-  // //.. convert the Storage data back from a string
-  // let outTemp = JSON.parse(outPost);
-
-  // if (outPost && outTemp.title !== "" && outTemp.writeup !== "") {
-
-  //   global.outTitle.innerText = outTemp.title;
-  //   global.outWriteup.innerText = outTemp.writeup;
-  //   global.outAuthor.innerText = "- " + outTemp.author;
-  //   global.editButn.style.display = "block";
-  // };
-
-  function addDisplay(title){
-    let outPost = localStorage.getItem(title);
-  
-    //.. convert the Storage data back from a string
-    let outTemp = JSON.parse(outPost);
-    let title_ = "";
-    let writeup_ = "";
-    let author_ = "";
-    let display_ = "";
-  
-    if (outPost && outTemp.title !== "" && outTemp.writeup !== "") {
-      title_ = outTemp.title;
-      writeup_ = outTemp.writeup;
-      author_ = "- " + outTemp.author;
-      display_ = "block";
-    };
-    return(
-      `<div class="output">
-        <h1 class="title">${title_}</h1>
-        <div class="writeup">${writeup_}</div>
-        <h3 class="author">${author_}</h3>
-        <button id="edit" style="display: ${display_};">edit post</button>
-    </div>`);
+  if (global.postTitles.length !== 0){
+    global.display = global.postTitles[(global.postTitles["length"]-1)];
+     addDisplay(global.display);
   };
 
-  if(global.postTitles.length >= 5){
-    devptDisplay("> 5");
-    for(let i=1; i<6; i++){
-      document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
-    };};
+  const outPost = localStorage.getItem(global.display);
+
+  //.. convert the Storage data back from a string
+  let outTemp = JSON.parse(outPost);
+
+  if (outPost && outTemp.title !== "" && outTemp.writeup !== "") {
+
+    global.outTitle.innerText = outTemp.title;
+    global.outWriteup.innerText = outTemp.writeup;
+    global.outAuthor.innerText = "- " + outTemp.author;
+    global.editButn.style.display = "block";
+  };
+
+  // function addDisplay(title){
+  //   let outPost = localStorage.getItem(title);
+  
+  //   //.. convert the Storage data back from a string
+  //   let outTemp = JSON.parse(outPost);
+  //   let title_ = "";
+  //   let writeup_ = "";
+  //   let author_ = "";
+  //   let display_ = "";
+  
+  //   if (outPost && outTemp.title !== "" && outTemp.writeup !== "") {
+  //     title_ = outTemp.title;
+  //     writeup_ = outTemp.writeup;
+  //     author_ = "- " + outTemp.author;
+  //     display_ = "block";
+  //   };
+  //   return(
+  //     `<div class="output">
+  //       <h1 class="title">${title_}</h1>
+  //       <div class="writeup">${writeup_}</div>
+  //       <h3 class="author">${author_}</h3>
+  //       <button id="edit" style="display: ${display_};">edit post</button>
+  //   </div>`);
+  // };
+
+  // if(global.postTitles.length >= 5){
+  //   devptDisplay("> 5");
+  //   for(let i=1; i<6; i++){
+  //     document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
+  //   };};
     
-  if(global.postTitles.length < 5){
-    devptDisplay("> 5");
-    for(let i=1; i<(global.postTitles["length"]+1); i++){
-      devptDisplay(i);
-      document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
-    };};
+  // if(global.postTitles.length < 5){
+  //   devptDisplay("> 5");
+  //   for(let i=1; i<(global.postTitles["length"]+1); i++){
+  //     devptDisplay(i);
+  //     document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
+  //   };};
   // }else{
   //   devptDisplay("< 5" + global.postTitles["length"]);
     // for(let i=1; i<global.postTitles["length"]; i++){
