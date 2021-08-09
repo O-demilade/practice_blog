@@ -95,12 +95,12 @@ window.addEventListener("DOMContentLoaded", function(d){
       document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
     };};
     
-  // if(global.postTitles.length < 5){
-  //   devptDisplay("> 5");
-  //   for(let i=1; i<(global.postTitles["length"]+1); i++){
-  //     devptDisplay(i);
-  //     document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
-  //   };};
+  if(global.postTitles.length < 5){
+    devptDisplay("> 5");
+    for(let i=1; i<(global.postTitles["length"]+1); i++){
+      devptDisplay(i);
+      document.querySelector(".display").innerHTML += addDisplay(global.postTitles[(global.postTitles["length"]-i)]);
+    };};
   // }else{
   //   devptDisplay("< 5" + global.postTitles["length"]);
     // for(let i=1; i<global.postTitles["length"]; i++){
