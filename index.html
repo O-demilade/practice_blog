@@ -18,14 +18,17 @@
         <button>&plus;</button>
     </header>
     <main>
-        <aside class="titles">
+        <aside>
             <h1>Posts</h1>
+            <div class="titles">
+            </div>
         </aside>
         <article class="display">
-            <div class="output">
+            <div class="output" style="display: none;">
                 <h1 class="title">Title</h1>
                 <div class="writeup">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi, minus pariatur commodi porro nulla ducimus provident beatae quos ex. Possimus id aperiam aspernatur nostrum laborum. Beatae accusantium mollitia aspernatur?</div>
                 <h3 class="author">Author</h3>
+                <button id="edit" style="display: none;">edit post</button>
             </div>
             <form class="input" action="\" method="GET" enctype="application/x-www-form-urlencoded">
                 <div><input type="hidden" name="post_hold" id="post_hold"></div>
@@ -52,7 +55,9 @@
         <aside class="adverts"></aside>
     </main>
     <footer></footer>
+    <div id="devpt-display">Development Display</div>
 </body>
 <script></script>
 <script src="js/practiblog.js" type="text/javascript"></script>
+<script src="js/devpt.js" type="text/javascript"></script>
 </html>

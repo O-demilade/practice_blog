@@ -33,6 +33,10 @@ header button{
     color: blue;
     border: none;
 }
+.titles{
+    display: grid;
+    padding-left: 10px;
+}
 main{
     display: grid;
     grid-template-columns: 25% 63% 10%;
@@ -55,6 +59,18 @@ article{
     color: chartreuse;
     float: right;
 }
+#edit{
+    color: red;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-style: italic;
+    font-size: 12px;
+}
+#edit:hover,
+#edit:focus{
+    opacity: 40%;
+}
 footer{
     background-color: var(--pb_red);
     display: grid;
@@ -72,4 +88,13 @@ footer{
 #cls_add {
     float: right;
     cursor: pointer;
+}
+
+#devpt-display{
+    position: absolute;
+    left: 10%;
+    top: 60%;
+    background-color: chartreuse;
+    padding: 5px;
+    display: none;
 }
