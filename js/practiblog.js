@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", function(d){
   // // select the last post and display it 
   if (global.postTitles.length !== 0){
     global.display = global.postTitles[(global.postTitles["length"]-1)];
-     addDisplay(global.display);
+    //  addDisplay(global.display);
   };
 
   const outPost = localStorage.getItem(global.display);
