@@ -35,8 +35,9 @@ window.addEventListener("DOMContentLoaded", function(){
     document.querySelector(".titles").innerHTML += `<a href="">${element}</a>`;
   });
   console.info("DOM content loaded" );
-}
-);
+
+  editPost();
+});
 
 global.addBtn.addEventListener("click", function(d){
   document.querySelector(".input").style.display="block";
@@ -44,6 +45,9 @@ global.addBtn.addEventListener("click", function(d){
 
 global.clsBtn.addEventListener("click", function(d){
   document.querySelector(".input").style.display="none";
+  if (document.querySelector(".input").classList.contains("editMode")){
+    document.querySelector(".input").classList.toggle("editMode");
+  };
 });
 
 global.postBtn.addEventListener("click", function(d){
@@ -57,6 +61,14 @@ global.postBtn.addEventListener("click", function(d){
   // console.log(global.practiBlogTitles);
   // Add post title to titles list
   let practiBlogTitlesStores = JSON.parse(localStorage.getItem("practiBlogTitles"));
+
+  if (document.querySelector(".input").classList.contains("editMode")){
+    let a = practiBlogTitlesStores.indexOf(post.title);
+    practiBlogTitlesStores.splice(a,1);
+    document.querySelector(".input").classList.toggle("editMode");
+  };
+
+
   practiBlogTitlesStores.push(post.title);
   console.log(practiBlogTitlesStores);
   // store the post data as a string in browser memory
@@ -87,4 +99,18 @@ function addDisplay(title){
       <h3 class="author">${author_}</h3>
       <button id="edit" style="display: ${display_};">edit post</button>
   </div>`);
+};
+function editPost(){
+  let editBtns = document.querySelectorAll("#edit");
+  editBtns.forEach(function(item){
+    item.addEventListener("click", function(d){
+      console.log("clicked", item.parentNode);
+      let editForm = document.querySelector(".input");
+      editForm.style.display="block";
+      editForm.classList.toggle("editMode");
+      editForm.querySelector("#post_title").value = item.parentNode.querySelector(".title").innerText;
+      editForm.querySelector("#post_writeup").value = item.parentNode.querySelector(".writeup").innerText;
+      editForm.querySelector("#post_author").value = item.parentNode.querySelector(".author").innerText.slice(2);
+    })
+  });
 };
